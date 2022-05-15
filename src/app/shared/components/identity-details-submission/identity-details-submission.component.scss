@@ -38,15 +38,35 @@
       div:last-child {
         margin-left: 8%;
       }
+
+
     }
 
     .button-wrapper {
       border: none;
+      display: flex;
+      justify-content: space-between;
       button {
         color: #fff;
-        width: 100%;
+        width: 40%;
         background-color: #e61991;
       }
     }
   }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+
+  .contact-header {
+    margin-top: 5%;
+    margin-bottom: 3%;
+  }
+
+  .button-wrapper {
+    margin-top: 3%;
+  }
+
 }

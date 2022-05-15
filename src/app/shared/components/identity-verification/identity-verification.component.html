@@ -8,8 +8,26 @@
     </p>
   </div>
   <div class="identity-types">
-    <div class="driving-license" (click)="identityClick($event)"></div>
-    <div class="australian-passport" (click)="identityClick($event)"></div>
-    <div class="medicare" (click)="identityClick($event)"></div>
+    <div class="driving-license" (click)="identityClick($event)">
+      <div>
+        <img src="assets/icons/aus-license.png" />
+      </div>
+      <div>Drivers licence</div>
+    </div>
+    <div class="australian-passport" (click)="identityClick($event)">
+      <div>
+        <img src="assets/icons/aus-passport.png" />
+      </div>
+      <div>Australian passport</div>
+    </div>
+    <div class="medicare" (click)="identityClick($event)">
+      <div>
+        <img src="assets/icons/medicare.png" />
+      </div>
+      <div>Medicare</div>
+    </div>
+    <div class="button-wrapper">
+      <button mat-flat-button ngDisabled="nextDisabled" (click)="continueIdentity()">NEXT</button>
+    </div>
   </div>
 </div>

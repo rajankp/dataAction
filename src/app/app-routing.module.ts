@@ -5,6 +5,7 @@ import { UserBasicDetailsComponent } from './shared/components/user-basic-detail
 import { UserAddressDetailsComponent } from './shared/components/user-address-details/user-address-details.component';
 import { LandingScreenComponent } from './shared/components/landing-screen/landing-screen.component';
 import { IdentityVerificationComponent } from './shared/components/identity-verification/identity-verification.component';
+import { IdentityDetailsSubmissionComponent } from './shared/components/identity-details-submission/identity-details-submission.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,9 @@ const routes: Routes = [
       },
       {
         path: 'ro-identity-verification', component: IdentityVerificationComponent
+      },
+      {
+        path: 'ro-identity-details-submission', component: IdentityDetailsSubmissionComponent
       }
     ]
   }

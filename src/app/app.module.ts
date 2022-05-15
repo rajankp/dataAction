@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { LandingScreenComponent } from './shared/components/landing-screen/landing-screen.component';
 import { IdentityVerificationComponent } from './shared/components/identity-verification/identity-verification.component';
+import { IdentityDetailsSubmissionComponent } from './shared/components/identity-details-submission/identity-details-submission.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { IdentityVerificationComponent } from './shared/components/identity-veri
     UserBasicDetailsComponent,
     UserAddressDetailsComponent,
     LandingScreenComponent,
-    IdentityVerificationComponent
+    IdentityVerificationComponent,
+    IdentityDetailsSubmissionComponent
   ],
   imports: [
     BrowserModule,

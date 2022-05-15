@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserInfoService } from '../../services/user-info.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-identity-verification',
@@ -7,8 +8,9 @@ import { UserInfoService } from '../../services/user-info.service';
   styleUrls: ['./identity-verification.component.scss']
 })
 export class IdentityVerificationComponent implements OnInit {
-  public selectedItems: any = [];
-  constructor(private userInfoService: UserInfoService) {
+  selectedItems: any = [];
+  nextDisabled: boolean = true;
+  constructor(private router: Router, private userInfoService: UserInfoService) {
     this.userInfoService.$showOnboardingHeader$.next(false);
   }
 
@@ -31,6 +33,7 @@ export class IdentityVerificationComponent implements OnInit {
         this.selectedItems.splice(this.selectedItems.indexOf(itemName), 1);
         console.log(this.selectedItems);
       }
+      this.nextDisabled = this.selectedItems.length > 1;
       return;
     }
 
@@ -40,11 +43,16 @@ export class IdentityVerificationComponent implements OnInit {
     }
 
     this.selectedItems.push(itemName);
-    console.log(this.selectedItems);
+    this.nextDisabled = this.selectedItems.length > 1;
   }
 
   removeSelection(selectedItem: string, e: any) {
     document.getElementsByClassName(selectedItem)[0].classList.remove('selected');
+  }
+
+  continueIdentity() {
+    this.router.navigate(['/ro-onboarding/ro-identity-details-submission'])
+
   }
 
 }

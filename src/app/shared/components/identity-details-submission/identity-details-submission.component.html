@@ -1,0 +1,42 @@
+<div class="identity-verification-header">
+  <div class="identity-verification-title">
+    Identity verification
+  </div>
+  <div class="identity-verification-sub-title">
+    <p>
+      We require 2 forms of ID to conduct an Identity check. Please enter your drivers licence and Australian passport details to continue.
+    </p>
+  </div>
+  <div class="identity-types">
+    <mat-sidenav-container>
+      <mat-sidenav-content>
+        <form class="form-class" [formGroup]="identityForm" novalidate>
+          <!-- Drivers licence number -->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Drivers licence number" formControlName="drivingLicense" />
+          </mat-form-field>
+          <!-- State -->
+          <mat-form-field class="example-full-width">
+            <mat-select id="state" name="state" formControlName="state">
+              <mat-option value="">Select</mat-option>
+              <mat-option [value]="stateName" *ngFor="let stateName of stateList">
+                {{stateName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- Australian Passport Number -->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Australian passport number" formControlName="australianPassport" />
+          </mat-form-field>
+          <div class="button-wrapper">
+            <button mat-flat-button >SELECT OTHER ID</button>
+            <button mat-flat-button >VERIFY DETAILS</button>
+          </div>
+        </form>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+
+
+  </div>
+</div>
