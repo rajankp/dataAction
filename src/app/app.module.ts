@@ -11,13 +11,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { LandingScreenComponent } from './shared/components/landing-screen/landing-screen.component';
+import { IdentityVerificationComponent } from './shared/components/identity-verification/identity-verification.component';
 @NgModule({
   declarations: [
     AppComponent,
     OnBoardingComponent,
     UserBasicDetailsComponent,
     UserAddressDetailsComponent,
-    LandingScreenComponent
+    LandingScreenComponent,
+    IdentityVerificationComponent
   ],
   imports: [
     BrowserModule,

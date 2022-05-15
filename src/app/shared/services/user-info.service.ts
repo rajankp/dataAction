@@ -8,6 +8,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 
 export class UserInfoService {
   $userData$: BehaviorSubject<any>;
+  $showOnboardingHeader$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
   constructor(private http: HttpClient) {
     this.$userData$ = new BehaviorSubject({});
   }

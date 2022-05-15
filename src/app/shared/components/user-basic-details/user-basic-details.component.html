@@ -1,6 +1,21 @@
 <mat-sidenav-container>
   <mat-sidenav-content>
-    <form class= "form-class" [formGroup]="userForm" (ngSubmit)="continueUserForm()" novalidate>
+    <form class="form-class" [formGroup]="userForm" (ngSubmit)="saveuserForm()" novalidate>
+      <!-- First Name -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="First Name" formControlName="firstName" />
+        <mat-error *ngIf="userForm.get('firstName')?.hasError('required')">Please enter your first name</mat-error>
+      </mat-form-field>
+      <!-- Middle Name -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Middle Name(if you have one)" formControlName="middleName" />
+      </mat-form-field>
+      <!-- Last Name -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Last Name" formControlName="lastName" />
+        <mat-error *ngIf="userForm.get('lastName')?.hasError('required')">Please enter your last name</mat-error>
+      </mat-form-field>
+      <!-- Title -->
       <mat-form-field class="example-full-width">
         <mat-select id="title" name="title" formControlName="title">
           <mat-option value="">Select</mat-option>
@@ -9,33 +24,43 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <!-- First Name -->
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="First Name" formControlName="firstName" />
-      </mat-form-field>
-      <!-- First Name -->
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Last Name" formControlName="lastName" />
-      </mat-form-field>
-      <!-- Gender -->
-      <div class="misc-bottom-padding">
-        <mat-label>Gender:</mat-label>
-        <mat-radio-group aria-label="Select an option" formControlName="gender">
-          <mat-radio-button value="male">Male</mat-radio-button>
-          <mat-radio-button value="female">Female</mat-radio-button>
-        </mat-radio-group>
-      </div>
-      <!-- Date picker -->
+      <!-- Date of Birth -->
       <mat-form-field>
         <input matInput readonly [matDatepicker]="picker" placeholder="Date of Birth" formControlName="dob"
           (dateChange)="date($event)" />
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
+      <!-- Gender -->
+      <!-- <div class="misc-bottom-padding">
+        <mat-label>Gender:</mat-label>
+        <mat-radio-group aria-label="Select an option" formControlName="gender">
+          <mat-radio-button value="male">Male</mat-radio-button>
+          <mat-radio-button value="female">Female</mat-radio-button>
+        </mat-radio-group>
+      </div> -->
+
+
+      <div class="contact-header">
+        <div class="personal-details">
+          Contact details
+        </div>
+      </div>
+
+      <!-- Email -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" formControlName="email" />
+        <mat-error *ngIf="userForm.get('email')?.hasError('required')">Please enter your email</mat-error>
+      </mat-form-field>
+      <!-- Mobile -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Mobile" formControlName="mobile" />
+        <mat-error *ngIf="userForm.get('mobile')?.hasError('required')">Please enter your mobile number</mat-error>
+      </mat-form-field>
 
       <!-- Submit -->
       <div class="button-wrapper">
-        <button mat-flat-button color="primary">Continue</button>
+        <button mat-flat-button color="primary">Save</button>
       </div>
     </form>
   </mat-sidenav-content>

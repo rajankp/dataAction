@@ -2,4 +2,14 @@ form {
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+  .contact-header {
+    margin-top: 5%;
+    margin-bottom: 3%;
+  }
+
+  .button-wrapper {
+    margin-top: 3%;
+  }
+
 }

@@ -1,0 +1,30 @@
+.identity-verification-header {
+  margin-bottom: 5%;
+  .identity-verification-title {
+    color: #1f4c73;
+    font-weight: normal;
+    font-size: large;
+    padding: 4% 0%;
+  }
+
+  .identity-verification-sub-title {
+    p {
+      margin-top: 2% !important;
+      color: #b6b6b5;
+      display: block;
+    }
+  }
+
+  .identity-types {
+    div {
+      border: 1px solid #b6b6b5;
+      margin: 2% 0%;
+      padding: 4% 1%;
+      border-radius: 2px;
+
+      &.selected {
+        border-color: #c7e5c6;
+      }
+    }
+  }
+}

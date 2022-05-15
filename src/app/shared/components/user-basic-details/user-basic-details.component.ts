@@ -13,7 +13,7 @@ export class UserBasicDetailsComponent implements OnInit {
 
   userForm: FormGroup;
   titleList: any = ["Mr", "Mrs", "Ms", "Miss"];
-  userBasicShowItems = ['title', 'firstName', 'lastname', 'gender', 'dob'];
+  userBasicShowItems = ['title', 'firstName', 'middleName', 'lastName', 'gender', 'dob', 'email', 'mobile'];
 
   constructor(private userInfoService: UserInfoService, public formBuilder: FormBuilder, private router: Router) {
 
@@ -37,23 +37,30 @@ export class UserBasicDetailsComponent implements OnInit {
       this.userForm = this.formBuilder.group({
         title: new FormControl(userData.name.title, [Validators.required]),
         firstName: new FormControl(userData.name.first, [Validators.required]),
+        middleName: new FormControl(userData.name.middle),
         lastName: new FormControl(userData.name.last, [Validators.required]),
-        gender: new FormControl(userData.gender, [Validators.required]),
-        dob: new FormControl(userData.dob.date, [Validators.required])
+        /* gender: new FormControl(userData.gender, [Validators.required]), */
+        dob: new FormControl(userData.dob.date, [Validators.required]),
+        email: new FormControl(userData.email, [Validators.required]),
+        mobile: new FormControl(userData.cell, [Validators.required])
       })
     } else {
       this.userForm = this.formBuilder.group({
         title: new FormControl('', [Validators.required]),
         firstName: new FormControl('', [Validators.required]),
+        middleName: new FormControl('', [Validators.required]),
         lastName: new FormControl('', [Validators.required]),
-        gender: new FormControl('', [Validators.required]),
-        dob: new FormControl('', [Validators.required])
+        /* gender: new FormControl('', [Validators.required]), */
+        dob: new FormControl('', [Validators.required]),
+        email: new FormControl('', [Validators.required]),
+        mobile: new FormControl('', [Validators.required])
       })
     }
   }
 
-  continueUserForm() {
-    this.router.navigate(['/ro-onboarding/ro-user-address'])
+  saveuserForm() {
+    this.router.navigate(['/ro-onboarding/ro-identity-verification']);
+    this.userInfoService.$showOnboardingHeader$.next(false);
   }
 
   date(event: any) {

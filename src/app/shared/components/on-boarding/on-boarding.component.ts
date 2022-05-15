@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 import { UserAddressDetailsComponent } from '../user-address-details/user-address-details.component';
 import { UserBasicDetailsComponent } from '../user-basic-details/user-basic-details.component';
 import { UserInfoService } from '../../services/user-info.service';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-on-boarding',
@@ -12,11 +12,20 @@ import { BehaviorSubject } from 'rxjs';
 })
 
 export class OnBoardingComponent implements OnInit {
-
-  constructor(private userInfoService: UserInfoService) { }
+  loading: boolean = true;
+  $showOnloadingHeader: Observable<boolean>;
+  constructor(private userInfoService: UserInfoService) {
+    this.userInfoService.$showOnboardingHeader$.subscribe((showHeader) => {
+      this.$showOnloadingHeader = of(showHeader);
+    });
+  }
 
   ngOnInit(): void {
     this.userInfoService.getUserDetails().subscribe((userInfo) => {
+      setTimeout(() => {
+        this.loading = false;
+      }, 3000);
+
       this.userInfoService.$userData$ .next(userInfo);
     })
   }

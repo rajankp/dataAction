@@ -1,3 +1,4 @@
+$p-title-color: #6e6e6e;
 .logo {
   background-color: #f0f0f0;
   padding-bottom:5px;
@@ -22,12 +23,12 @@
     top: 0px;
   }
 
-  .thirty {
+  &.thirty {
     background: /* gradient can be an image */
     linear-gradient(
         to right,
-        #e61991 30%,
-        #fec9e0 70%
+        #e61991 5%,
+        #fec9e0 95%
       )
       left
       bottom
@@ -56,8 +57,31 @@
   margin: auto;
   width: 60%;
 
-  .your-details {
-    color: #1f4c73;
+  .onboarding-header {
+    margin-bottom: 5%;
+    .your-details {
+      color: #1f4c73;
+      font-weight: normal;
+      font-size: large;
+      padding: 4% 0%;
+    }
+
+    .personal-details, .join-account {
+      color: $p-title-color;
+
+      p {
+        margin-top: 2% !important;
+        color: #b6b6b5;
+        display: block;
+      }
+    }
+
+    .join-account {
+      a {
+        color: #7c99af;
+        text-decoration: none;
+      }
+    }
   }
 }
 

@@ -4,6 +4,7 @@ import { OnBoardingComponent } from './shared/components/on-boarding/on-boarding
 import { UserBasicDetailsComponent } from './shared/components/user-basic-details/user-basic-details.component';
 import { UserAddressDetailsComponent } from './shared/components/user-address-details/user-address-details.component';
 import { LandingScreenComponent } from './shared/components/landing-screen/landing-screen.component';
+import { IdentityVerificationComponent } from './shared/components/identity-verification/identity-verification.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,9 @@ const routes: Routes = [
       },
       {
         path: 'ro-user-address', component: UserAddressDetailsComponent
+      },
+      {
+        path: 'ro-identity-verification', component: IdentityVerificationComponent
       }
     ]
   }
