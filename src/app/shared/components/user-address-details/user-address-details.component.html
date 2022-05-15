@@ -1,0 +1,38 @@
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <form class= "form-class" [formGroup]="userForm" (ngSubmit)="continueUserForm()" novalidate>
+      <!-- Stree -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Street" formControlName="street" />
+      </mat-form-field>
+      <!-- City -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="City" formControlName="city" />
+      </mat-form-field>
+      <!-- City -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="State" formControlName="state" />
+      </mat-form-field>
+      <!-- City -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Country" formControlName="country" />
+      </mat-form-field>
+      <!-- City -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Postcode" formControlName="postCode" />
+      </mat-form-field>
+      <!-- City -->
+      <mat-form-field class="example-full-width">
+        <input matInput type="email" placeholder="email@domain.com" formControlName="email" />
+      </mat-form-field>
+      <!-- City -->
+      <mat-form-field class="example-full-width">
+        <input matInput type="phone" placeholder="Postcode" formControlName="postCode" />
+      </mat-form-field>
+      <!-- Submit -->
+      <div class="button-wrapper">
+        <button mat-flat-button color="primary">Continue</button>
+      </div>
+    </form>
+  </mat-sidenav-content>
+</mat-sidenav-container>

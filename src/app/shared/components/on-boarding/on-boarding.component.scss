@@ -1,0 +1,63 @@
+.logo {
+  background-color: #f0f0f0;
+  padding-bottom:5px;
+  background: /* gradient can be an image */
+    linear-gradient(
+      to right,
+      #fec9e0 100%,
+      #fec9e0 100%
+    )
+    left
+    bottom
+    #f0f0f0
+    no-repeat;
+  background-size:100% 5px ;/* if linear-gradient, we need to resize it */
+
+  img {
+    margin: auto;
+    display: block;
+    position:relative;
+    width: 20%;
+    height: 10vh;
+    top: 0px;
+  }
+
+  .thirty {
+    background: /* gradient can be an image */
+    linear-gradient(
+        to right,
+        #e61991 30%,
+        #fec9e0 70%
+      )
+      left
+      bottom
+      #f0f0f0
+      no-repeat;
+    background-size:100% 5px ;/* if linear-gradient, we need to resize it */
+  }
+
+  .seventy {
+    /* border-bottom: 3px linear-gradient(to right, #e61991 30%, #fec9e0 70%); */
+    background: /* gradient can be an image */
+    linear-gradient(
+        to right,
+        #e61991 70%,
+        #fec9e0 30%
+      )
+      left
+      bottom
+      #f0f0f0
+      no-repeat;
+    background-size:100% 5px ;/* if linear-gradient, we need to resize it */
+  }
+}
+
+.content-container {
+  margin: auto;
+  width: 60%;
+
+  .your-details {
+    color: #1f4c73;
+  }
+}
+
